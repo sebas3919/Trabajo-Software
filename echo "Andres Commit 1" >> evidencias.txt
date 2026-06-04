@@ -1,0 +1,2 @@
+git add .
+git commit -m "feat: add DatabaseConfig and AuthService with email validation"
