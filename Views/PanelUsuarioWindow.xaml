@@ -1,0 +1,81 @@
+<Window x:Class="TrabajoFinalWPF.Views.PanelUsuarioWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Panel Egresado"
+        Height="720"
+        Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="#F4F4F4">
+
+    <Window.Resources>
+        <Style x:Key="CardStyle" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="RowBackground" Value="White"/>
+            <Setter Property="AlternatingRowBackground" Value="#E8F5F0"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#084C3D"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Encabezado -->
+        <Border Background="#0B6E4F" Padding="25" Grid.Row="0">
+            <StackPanel>
+                <TextBlock x:Name="txtBienvenida"
+                           FontSize="30" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Text="Consulta tu progreso académico y resultados de cuestionarios."
+                           FontSize="15" Foreground="White" Margin="0,5,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Nivel de deserción -->
+        <Border Grid.Row="1" Style="{StaticResource CardStyle}" Margin="20">
+            <StackPanel>
+                <TextBlock Text="Nivel de Deserción Académica"
+                           FontSize="18" FontWeight="SemiBold" Foreground="#084C3D"/>
+                <TextBlock x:Name="txtNivel"
+                           FontSize="24" FontWeight="Bold" Foreground="#0B6E4F"
+                           Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Historial de cuestionarios -->
+        <Border Grid.Row="2" Style="{StaticResource CardStyle}" Margin="20">
+            <StackPanel>
+                <TextBlock Text="Historial de Cuestionarios"
+                           FontSize="22" FontWeight="Bold" Foreground="#084C3D"
+                           Margin="0,0,0,15"/>
+                <DataGrid x:Name="dgCuestionarios"
+                          CanUserAddRows="False" IsReadOnly="True"
+                          SelectionMode="Single" Height="400">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Cuestionario"  Binding="{Binding Titulo}"        Width="*"/>
+                        <DataGridTextColumn Header="Fecha"         Binding="{Binding Fecha}"         Width="*"/>
+                        <DataGridTextColumn Header="Puntaje"       Binding="{Binding Puntaje}"       Width="*"/>
+                        <DataGridTextColumn Header="Observaciones" Binding="{Binding Observaciones}" Width="2*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

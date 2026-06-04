@@ -1,0 +1,90 @@
+<Window x:Class="TrabajoFinalWPF.Views.RegistroAdministradorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registro Administrador"
+        Height="600"
+        Width="750"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#0B6E4F">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="Margin" Value="0,8,0,0"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#0B6E4F"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="Margin" Value="0,8,0,0"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#0B6E4F"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#084C3D"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style x:Key="ErrorLabel" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#CC0000"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Margin" Value="0,2,0,4"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Border Width="430"
+                Background="White"
+                CornerRadius="18"
+                Padding="35"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <StackPanel>
+
+                <TextBlock Text="Registro de Administrador"
+                           FontSize="28" FontWeight="Bold"
+                           Foreground="#084C3D"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock Text="Crea una cuenta administrativa autorizada"
+                           FontSize="14" Foreground="#555"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <TextBlock Text="Nombre completo" FontWeight="SemiBold" Foreground="#1F1F1F"/>
+                <TextBox x:Name="txtNombre"/>
+                <TextBlock x:Name="lblErrorNombre" Style="{StaticResource ErrorLabel}"/>
+
+                <TextBlock Text="Correo institucional" FontWeight="SemiBold" Foreground="#1F1F1F"/>
+                <TextBox x:Name="txtCorreo"/>
+                <TextBlock x:Name="lblErrorCorreo" Style="{StaticResource ErrorLabel}"/>
+
+                <TextBlock Text="Contraseña" FontWeight="SemiBold" Foreground="#1F1F1F"/>
+                <PasswordBox x:Name="txtPassword"/>
+                <TextBlock x:Name="lblErrorPassword" Style="{StaticResource ErrorLabel}"/>
+
+                <TextBlock Text="Mín. 6 caracteres · una mayúscula · una minúscula · un carácter especial"
+                           FontSize="11" Foreground="#888"
+                           TextWrapping="Wrap" Margin="0,0,0,4"/>
+
+                <Button Content="REGISTRAR" Click="Registrar_Click" Background="#0B6E4F"/>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
