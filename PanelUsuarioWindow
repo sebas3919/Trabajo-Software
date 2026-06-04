@@ -1,1 +1,2 @@
-add PanelUsuarioWindow
+git add .
+git commit -m "feat: add PanelUsuarioWindow with requirements tab and progress bar
