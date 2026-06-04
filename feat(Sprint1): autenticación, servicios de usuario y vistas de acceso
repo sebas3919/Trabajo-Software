@@ -1,0 +1,15 @@
+echo "Andres Commit 1" >> evidencias.txt
+git add .
+git commit -m "feat: add DatabaseConfig and AuthService with email validation"
+
+echo "Andres Commit 2" >> evidencias.txt
+git add .
+git commit -m "feat: add UsuarioService with Insertar, Buscar and ObtenerEstudiantes methods"
+
+echo "Andres Commit 3" >> evidencias.txt
+git add .
+git commit -m "feat: implement LoginWindow with role-based redirect (Admin/Egresado)"
+
+echo "Andres Commit 4" >> evidencias.txt
+git add .
+git commit -m "feat: add RegistroAdministradorWindow with admin code validation"
