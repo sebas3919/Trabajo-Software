@@ -1,0 +1,2 @@
+git add .
+git commit -m "feat: implement LoginWindow with role-based redirect (Admin/Egresado)"
